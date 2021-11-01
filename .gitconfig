@@ -1,0 +1,47 @@
+[user]
+	name = Artur Shellunts
+	email = artur.shellunts@teamviewer.com
+#[merge]
+#	renamelimit = 13000 
+[pull]
+	rebase = true
+[core]
+	excludesfile = /Users/arturshellunts/.gitignore_global
+	editor = code --wait --new-window
+[alias]
+	ri= rebase -i
+	rom = rebase origin/master
+	rc = rebase --continue
+	f = fetch
+	pr = remote prune origin
+	d = diff
+	ds = diff --staged
+	st = status --short --branch -uno
+	ci = commit
+	co = checkout
+	br = branch
+	brd = branch -D
+	chp = cherry-pick
+	pl = pull
+	p = push
+	pnb = push -u origin HEAD
+	pf = push -f
+	cia = commit --amend
+	l = "log --pretty=format:'%Cred%h%Creset%x09%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+[diff]
+    tool = default-difftool
+
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[filter "lfs"]
+	process = git-lfs filter-process --skip
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge --skip -- %f

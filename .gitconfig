@@ -9,6 +9,7 @@
 	excludesfile = /Users/arturshellunts/.gitignore_global
 	editor = code --wait --new-window
 [alias]
+	amend = ci -a --amend --no-edit
 	ri= rebase -i
 	rom = rebase origin/master
 	rc = rebase --continue

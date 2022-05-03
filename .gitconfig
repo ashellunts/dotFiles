@@ -31,6 +31,8 @@
 	l = "log --pretty=format:'%Cred%h%Creset%x09%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 [diff]
     tool = default-difftool
+[pull]
+    rebase=true
 
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE

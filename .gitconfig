@@ -1,15 +1,14 @@
 [user]
 	name = Artur Shellunts
 	email = shellunts.artur@gmail.com
-#[merge]
-#	renamelimit = 13000 
 [pull]
 	rebase = true
 [core]
 	excludesfile = /Users/arturshellunts/.gitignore_global
 	editor = code --wait --new-window
 [alias]
-	amend = ci -a --amend --no-edit
+	aa = ci -a --amend --no-edit
+	a = ci --amend --no-edit
 	ri= rebase -i
 	rom = rebase origin/master
 	rc = rebase --continue
@@ -17,8 +16,11 @@
 	pr = remote prune origin
 	d = diff
 	ds = diff --staged
-	st = status --short --branch -uno
+	st = status --short --branch
 	ci = commit
+	cim = commit -m
+	ciam = commit -am
+	rh = reset --hard
 	co = checkout
 	br = branch
 	brd = branch -D
@@ -42,13 +44,13 @@
 	trustExitCode = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [filter "lfs"]
 	process = git-lfs filter-process --skip
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge --skip -- %f
-	
+
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 

@@ -4,12 +4,12 @@
 [pull]
 	rebase = true
 [core]
-	excludesfile = /Users/arturshellunts/.gitignore_global
 	editor = code --wait --new-window
 [alias]
 	aa = ci -a --amend --no-edit
 	a = ci --amend --no-edit
 	ri= rebase -i
+	rh = reset --hard
 	rom = rebase origin/master
 	rc = rebase --continue
 	f = fetch
@@ -20,7 +20,6 @@
 	ci = commit
 	cim = commit -m
 	ciam = commit -am
-	rh = reset --hard
 	co = checkout
 	br = branch
 	brd = branch -D
@@ -29,28 +28,6 @@
 	p = push
 	pnb = push -u origin HEAD
 	pf = push -f
-	cia = commit --amend
 	l = "log --pretty=format:'%Cred%h%Creset%x09%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-[diff]
-    tool = default-difftool
 [pull]
     rebase=true
-
-[difftool "default-difftool"]
-    cmd = code --wait --diff $LOCAL $REMOTE
-
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[filter "lfs"]
-	process = git-lfs filter-process --skip
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge --skip -- %f
-
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
-

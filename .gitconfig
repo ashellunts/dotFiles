@@ -27,7 +27,7 @@
 	pl = pull
 	p = push
 	pnb = push -u origin HEAD
-	pf = push -f
+	pf = push -force-with-lease
 	l = "log --pretty=format:'%Cred%h%Creset%x09%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 [pull]
     rebase=true

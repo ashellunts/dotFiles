@@ -9,6 +9,7 @@
 	aa = ci -a --amend --no-edit
 	a = ci --amend --no-edit
 	ri= rebase -i
+	riaa= rebase -x \"git commit --amend --reset-author -CHEAD\" -i
 	rh = reset --hard
 	rom = rebase origin/master
 	rc = rebase --continue

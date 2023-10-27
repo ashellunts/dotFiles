@@ -7,6 +7,7 @@
 	editor = code --wait --new-window
 [alias]
 	aa = ci -a --amend --no-edit
+	cl = clean -fd
 	a = ci --amend --no-edit
 	ri= rebase -i
 	riaa= rebase -x \"git commit --amend --reset-author -CHEAD\" -i

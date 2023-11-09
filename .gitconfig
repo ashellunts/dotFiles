@@ -9,6 +9,7 @@
 	aa = ci -a --amend --no-edit
 	cl = clean -fd
 	a = ci --amend --no-edit
+	cl = clean -fd
 	ri= rebase -i
 	riaa= rebase -x \"git commit --amend --reset-author -CHEAD\" -i
 	rh = reset --hard

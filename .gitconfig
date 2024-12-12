@@ -1,18 +1,9 @@
-[user]
-	name = Artur Shellunts
-	email = shellunts.artur@gmail.com
-[pull]
-	rebase = true
-[core]
-	editor = code --wait --new-window
 [alias]
+	ap = add -p
 	aa = ci -a --amend --no-edit
-	cl = clean -fd
 	a = ci --amend --no-edit
-	cl = clean -fd
 	ri= rebase -i
 	riaa= rebase -x \"git commit --amend --reset-author -CHEAD\" -i
-	rh = reset --hard
 	rom = rebase origin/master
 	rc = rebase --continue
 	f = fetch
@@ -20,9 +11,11 @@
 	d = diff
 	ds = diff --staged
 	st = status --short --branch
+	sns = show --name-status
 	ci = commit
 	cim = commit -m
 	ciam = commit -am
+	rh = reset --hard
 	co = checkout
 	br = branch
 	brd = branch -D
@@ -30,10 +23,23 @@
 	pl = pull
 	p = push
 	pnb = push -u origin HEAD
-	pf = push -force-with-lease
-	l = "log --pretty=format:'%Cred%h%Creset%x09%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+	pf = push --force-with-lease
+	cia = commit --amend
+	l = "log --pretty=format:'%Cgreen%<(15,trunc)(%ch) %C(red)%d%Creset %C(yellow)%h%Creset %<(80,trunc)%s %Creset<%an>%Creset' --abbrev-commit"
+	cl = clean -fd
+[core]
+	editor = micro
 [pull]
-	rebase=true
-[color "diff"]
-	meta = "#3388ff"
+	rebase = true
+[user]
+	name = Artur Shellunts
+	email = shellunts.artur@gmail.com
 
+[delta]
+    navigate = true    # use n and N to move between diff sections
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
